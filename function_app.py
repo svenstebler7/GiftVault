@@ -50,6 +50,7 @@ def create_gift():
     new_gift = request.get_json()
     new_gift["PartitionKey"] = "gift"
     new_gift["RowKey"] = str(new_gift["id"])
+    new_gift["created"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     new_gift["bought"] = False
     new_gift["gifted"] = False
 

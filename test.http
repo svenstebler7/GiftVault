@@ -1,31 +1,28 @@
-
-
-#@url = http://localhost:7071
 @url = https://funcgiftvault.azurewebsites.net
 
 ### Get all gifts
 GET {{url}}/gifts
 
-
 ### Get gift by id 
-GET {{url}}/gifts/1
+GET {{url}}/gifts/2
 
 ### Create gift
 POST {{url}}/gifts
 content-type: application/json
 
 {
-  "bought": false,
-  "cost": 100.0,
+  "id":"2",
+  "bought": "false",
+  "cost": "100.0",
   "giftFor": "Birthday",
-  "gifted": false,
+  "gifted": "false",
   "giftidea": "Helmet",
   "name": "Mami",
   "url": "www.galaxus.ch"
 }
 
 ### Update gift (just the title)
-PUT {{url}}/gifts/1
+PUT {{url}}/gifts/2
 content-type: application/json
 
 {
@@ -41,4 +38,4 @@ content-type: application/json
 }
 
 ### Delete gift
-DELETE {{url}}/gifts/1
+DELETE {{url}}/gifts/2
