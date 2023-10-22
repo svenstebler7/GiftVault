@@ -42,8 +42,6 @@ def get_gift(row_id):
 
     return {"error": "gift not found"}, 404
 
-
-
 @flask_app.route('/gifts', methods=['POST'])
 def create_gift():
     logging.info('Python HTTP trigger function processed a request. POST new gift')
@@ -59,7 +57,6 @@ def create_gift():
     logging.info("record added")
 
     return jsonify(new_gift), 201
-
 
 @flask_app.route('/gifts/<int:gift_id>', methods=['PUT'])
 def update_gift_by_id(gift_id):
@@ -90,8 +87,6 @@ def update_gift_by_id(gift_id):
     
     table_client.update_entity(mode='merge', entity=gift)
     return jsonify(gift)
-
-
 
 @flask_app.route('/gifts/<int:gift_id>', methods=['DELETE'])
 def delete_gift_by_id(gift_id):
